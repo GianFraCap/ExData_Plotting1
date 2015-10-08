@@ -1,4 +1,4 @@
-#### R code for reading the data to be plotted in polt1.png
+#### R code for reading the data to be plotted in plot3.png
 install.packages("readr")
 require(readr)
 # Acquire Column names
@@ -10,7 +10,6 @@ hpc <- read_delim("household_power_consumption.txt", delim = ";", na = "?",
 # Adding a column with date & time used for plotting
 hpc$dateTime <- strptime(paste(hpc$Date, hpc$Time), "%d/%m/%Y %H:%M:%S")
 # plot the graphic into plot3.png file
-# IMPORTANT: x-label shows "gio", "ven", "sab" instead of "thu", "fri", "sat" because in my installation R is using Italian vocabulary.
 png(file="plot3.png")
 plot(hpc$dateTime, hpc$Sub_metering_1, type="l", xlab="", ylab="Global Active Power (kilowatts)")
 points(hpc$dateTime, hpc$Sub_metering_2, type="l", xlab="", ylab="Global Active Power (kilowatts)", col="red")

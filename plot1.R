@@ -1,4 +1,4 @@
-#### R code for reading the data to be plotted in polt1.png
+#### R code for reading the data to be plotted in plot1.png
 install.packages("readr")
 require(readr)
 # Acquire Column names
