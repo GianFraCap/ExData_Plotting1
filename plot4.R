@@ -10,6 +10,7 @@ hpc <- read_delim("household_power_consumption.txt", delim = ";", na = "?",
 # Adding a column with date & time used for plotting
 hpc$dateTime <- strptime(paste(hpc$Date, hpc$Time), "%d/%m/%Y %H:%M:%S")
 # plot the graphic into plot4.png file
+# IMPORTANT: x-label shows "gio", "ven", "sab" instead of "thu", "fri", "sat" because in my installation R is using Italian vocabulary.
 png(file="plot4.png")
 par(mfcol= c(2,2))
 #
